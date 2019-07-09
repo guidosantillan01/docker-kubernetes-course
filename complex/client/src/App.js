@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
@@ -10,18 +9,16 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          <Link to="/">Home</Link>
-          <Link to="/otherpage">Other page</Link>
+        <header>
+          <h1>Learn React</h1>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/otherpage">Other page</Link>
+            </li>
+          </ul>
         </header>
         <div>
           <Route exact path="/" component={Fib} />
