@@ -2,3 +2,12 @@ version: '3'
 services:
   postgres:
     image: 'postgres:latest'
+  redis:
+    image: 'redis:latest'
+  server:
+    build:
+      dockerfile: Dockerfile.dev # Only the file
+      context: ./server # Only the directory
+    volumes:
+      - /app/node_modules
+      - ./server:/app # If a file inside the app directory is checked, redirect to the ./server directory
